@@ -175,26 +175,21 @@
           <p id="rena-dialogue" class="text-[10px] text-cyan-200 truncate font-sans text-center"></p>
         </div>
 
-        <div class="grid grid-cols-4 gap-1.5 w-full pointer-events-auto">
-          <button id="btn-skill-coreult" class="relative overflow-hidden flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-gradient-to-b from-fuchsia-950/95 to-slate-900/95 border-2 border-fuchsia-400/80 text-fuchsia-200 shadow-[0_0_14px_rgba(232,121,249,0.4)] active:scale-95 transition">
-            <div id="cd-coreult" class="absolute inset-0 bg-slate-950/85 origin-bottom scale-y-0 transition-transform"></div>
-            <span id="hud-ult-title" class="text-[10px] font-sci font-black text-fuchsia-300 truncate max-w-full">🔥 CORE BEAM</span>
-            <span id="hud-ult-sub" class="text-[7px] text-fuchsia-200 truncate max-w-full">コア必殺技(5.0s)</span>
-          </button>
+        <div class="grid grid-cols-3 gap-2 w-full pointer-events-auto">
           <button id="btn-skill-magnet" class="relative overflow-hidden flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-slate-900/85 border border-cyan-500/50 text-cyan-300 active:scale-95 transition">
             <div id="cd-magnet" class="absolute inset-0 bg-slate-950/80 origin-bottom scale-y-0 transition-transform"></div>
-            <span class="text-[10px] font-sci font-bold">🧲 MAGNET</span>
-            <span class="text-[7px] text-slate-400">全残骸吸引</span>
+            <span class="text-[11px] font-sci font-bold">🧲 MAGNET</span>
+            <span class="text-[8px] text-slate-400">全残骸吸引</span>
           </button>
           <button id="btn-skill-overclock" class="relative overflow-hidden flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-slate-900/85 border border-amber-500/50 text-amber-300 active:scale-95 transition">
             <div id="cd-overclock" class="absolute inset-0 bg-slate-950/80 origin-bottom scale-y-0 transition-transform"></div>
-            <span class="text-[10px] font-sci font-bold">⚡ OVERCLOCK</span>
-            <span class="text-[7px] text-slate-400">全火器2.4倍速</span>
+            <span class="text-[11px] font-sci font-bold">⚡ OVERCLOCK</span>
+            <span class="text-[8px] text-slate-400">全火器2.4倍速</span>
           </button>
           <button id="btn-skill-purge" class="relative overflow-hidden flex flex-col items-center justify-center py-1.5 px-1 rounded-xl bg-slate-900/85 border border-rose-500/50 text-rose-300 active:scale-95 transition">
             <div id="cd-purge" class="absolute inset-0 bg-slate-950/80 origin-bottom scale-y-0 transition-transform"></div>
-            <span class="text-[10px] font-sci font-bold">💥 EMP NOVA</span>
-            <span class="text-[7px] text-slate-400">弾消去＆修復</span>
+            <span class="text-[11px] font-sci font-bold">💥 EMP NOVA</span>
+            <span class="text-[8px] text-slate-400">弾幕消去＆装甲修復</span>
           </button>
         </div>
       </div>
@@ -279,7 +274,7 @@
             3.TECH
           </button>
           <button data-garage-tab="codex" class="garage-tab-btn py-1.5 px-1 rounded-lg text-[9px] font-sci font-bold bg-slate-900 text-purple-300 border border-purple-500/50 transition">
-            4.CODEX
+            4.やり込み
           </button>
         </div>
       </div>
@@ -290,8 +285,8 @@
         <!-- Section 1: Stage & Difficulty Selection -->
         <div id="garage-sec-planet" class="bg-slate-900/80 border border-cyan-500/30 rounded-xl p-3">
           <div class="flex justify-between items-center mb-1.5">
-            <span class="text-xs font-sci text-cyan-400 font-bold tracking-wider">1. SELECT PLANET // 奪還宙域＆難易度特典</span>
-            <span class="text-[9px] text-slate-400">後半惑星はコア強化必須！</span>
+            <span class="text-xs font-sci text-cyan-400 font-bold tracking-wider">1. SELECT PLANET // 奪還宙域＆無限遠征</span>
+            <span class="text-[9px] text-slate-400">ボス撃破で次惑星解放</span>
           </div>
           <div id="stage-select-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-1.5"></div>
           <div id="selected-stage-desc" class="mt-2 p-2.5 rounded-lg bg-slate-950/90 border border-slate-800 text-[10px] text-slate-300 flex flex-col gap-1.5"></div>
@@ -302,19 +297,19 @@
             <div id="abyss-checkpoint-list" class="flex flex-wrap gap-1"></div>
           </div>
 
-          <!-- Combat Threat / Difficulty Selector (Hidden/Locked in Stage EX Abyss) -->
-          <div id="difficulty-selector-row" class="mt-2.5 pt-2 border-t border-slate-800 flex items-center justify-between gap-2">
-            <span class="text-[10px] font-sci text-rose-400 font-bold">DIFFICULTY (難易度選択):</span>
-            <div id="difficulty-group" class="flex gap-1.5">
-              <button data-diff="1" class="diff-btn px-2.5 py-1 rounded text-[9px] font-sci font-bold bg-cyan-600 text-white border border-cyan-300">
+          <!-- Combat Threat / Difficulty Selector -->
+          <div class="mt-2.5 pt-2 border-t border-slate-800 flex items-center justify-between gap-2">
+            <span class="text-[10px] font-sci text-rose-400 font-bold">ENEMY THREAT (敵勢力強度):</span>
+            <div id="difficulty-group" class="flex gap-1">
+              <button data-diff="1" class="diff-btn px-2 py-1 rounded text-[9px] font-sci font-bold bg-rose-600 text-white border border-rose-400">
                 STANDARD [標準]
               </button>
-              <button data-diff="2.2" class="diff-btn px-2.5 py-1 rounded text-[9px] font-sci font-bold bg-slate-950 text-slate-400 border border-slate-700">
-                HARDCORE [猛攻・特典有]
+              <button data-diff="1.45" class="diff-btn px-2 py-1 rounded text-[9px] font-sci font-bold bg-slate-950 text-slate-400 border border-slate-700">
+                HARDCORE [猛攻]
               </button>
-            </div>
-            <div id="abyss-fixed-diff-badge" class="hidden px-2.5 py-1 rounded bg-purple-950/90 border border-purple-400/60 text-[9px] font-sci text-purple-200 font-bold">
-              🔒 ABYSS 固定難易度 (WAVE連動強化)
+              <button data-diff="2.0" class="diff-btn px-2 py-1 rounded text-[9px] font-sci font-bold bg-slate-950 text-slate-400 border border-slate-700">
+                OVERDRIVE [地獄]
+              </button>
             </div>
           </div>
         </div>
@@ -333,49 +328,31 @@
             <!-- Interactive 5x5 Slot Grid (24 Slots around K-CORE) -->
             <div class="flex flex-col items-center flex-shrink-0">
               <span class="text-[8px] font-sci text-sky-400 tracking-widest mb-0.5">▲ FRONT VANGUARD (前衛:装甲HP+1) ▲</span>
-              <div id="loadout-grid" class="grid grid-cols-5 gap-1 p-1.5 bg-slate-950 rounded-xl border border-slate-800 flex-shrink-0"></div>
-              <span class="text-[8px] font-sci text-purple-400 tracking-widest mt-0.5">▼ REAR ARTILLERY (後衛:射撃威力+25%) ▼</span>
+              <div id="loadout-grid" class="grid grid-cols-5 gap-1 bg-slate-950 p-1.5 rounded-xl border border-slate-800"></div>
+              <span class="text-[8px] font-sci text-purple-400 tracking-widest mt-0.5">▼ REAR ARTILLERY (後衛:火力+25%) ▼</span>
             </div>
-
-            <!-- Unlocked Weapon Palette -->
-            <div class="flex-1 w-full">
-              <div class="flex justify-between items-center mb-1">
-                <div class="text-[9px] text-slate-400">装着するパーツを選択して左のマスをタップ：</div>
-                <button id="btn-clear-loadout" class="px-2 py-0.5 rounded bg-rose-950/80 border border-rose-500/40 text-[8px] text-rose-300 active:scale-95">
-                  全解除
-                </button>
+            <!-- Weapon Palette -->
+            <div class="flex-1 w-full min-w-0 flex flex-col gap-1">
+              <div class="flex justify-between items-center">
+                <span class="text-[9px] text-cyan-300 font-sci font-bold">WEAPON & ARMOR PALETTE</span>
+                <button id="btn-clear-loadout" class="text-[8px] px-1.5 py-0.5 rounded bg-rose-950/80 border border-rose-500/40 text-rose-300 active:scale-95">全外し</button>
               </div>
               <div id="weapon-palette" class="grid grid-cols-2 gap-1"></div>
-              <div id="selected-weapon-info" class="mt-1.5 p-2 rounded bg-slate-950 border border-slate-800 text-[9px] text-slate-300"></div>
+              <div id="selected-weapon-info" class="mt-1 p-1.5 rounded bg-slate-950/90 border border-slate-800 text-[9px] text-slate-300 leading-tight"></div>
             </div>
           </div>
         </div>
 
-        <!-- Section 3: Permanent Core Tech Upgrades & Core Ultimate Arts -->
-        <div id="garage-sec-upgrades" class="bg-slate-900/85 border-2 border-amber-500/50 rounded-xl p-3 shadow-[0_0_20px_rgba(245,158,11,0.15)] space-y-3">
-          <!-- Sub-panel A: K-CORE ULTIMATE ARTS (コア必殺技の選択＆強化) -->
-          <div class="p-2.5 rounded-xl bg-fuchsia-950/35 border border-fuchsia-500/50">
-            <div class="flex items-center justify-between mb-1.5">
-              <div>
-                <span class="text-xs font-sci text-fuchsia-300 font-black tracking-wide block">⚡ K-CORE ULTIMATE ARTS (コア必殺技の装備＆強化)</span>
-                <span class="text-[10px] text-slate-300">各ステージの【HARDCORE】クリアで新必殺技が解禁！強化で持続時間や弾数が増加！</span>
-              </div>
-              <span class="text-[9px] font-sci px-2 py-0.5 rounded bg-fuchsia-950 text-fuchsia-300 border border-fuchsia-400/50 font-bold">ULTIMATE</span>
+        <!-- Section 3: Permanent Core Tech Upgrades -->
+        <div id="garage-sec-upgrades" class="bg-slate-900/85 border-2 border-amber-500/50 rounded-xl p-3 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+          <div class="flex items-center justify-between mb-2">
+            <div>
+              <span class="text-xs font-sci text-amber-300 font-black tracking-wide block">3. CORE TECH UPGRADES (コア永続強化)</span>
+              <span class="text-[10px] text-slate-300">スクラップを消費して要塞の初期枠・磁力・火力・装甲を強化（全6項目）</span>
             </div>
-            <div id="core-ult-list" class="flex flex-col gap-1.5"></div>
+            <span class="text-[9px] font-sci px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-400/50 font-bold">PERMANENT</span>
           </div>
-
-          <!-- Sub-panel B: Permanent Core Tech Upgrades -->
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <div>
-                <span class="text-xs font-sci text-amber-300 font-black tracking-wide block">3. CORE TECH UPGRADES (コア永続強化・上限解放)</span>
-                <span class="text-[10px] text-slate-300">ステージ2以降は敵の装甲・火力が急上昇します。コア強化を重ねて突破しましょう！</span>
-              </div>
-              <span class="text-[9px] font-sci px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-400/50 font-bold">PERMANENT</span>
-            </div>
-            <div id="upgrade-list" class="flex flex-col gap-2"></div>
-          </div>
+          <div id="upgrade-list" class="flex flex-col gap-2"></div>
         </div>
 
         <!-- Section 4: Replayability - Part Mastery Codex & Achievement Medals -->
@@ -399,7 +376,7 @@
 
           <!-- Achievement Medals List -->
           <div class="pt-2 border-t border-slate-800">
-            <span class="text-[10px] font-sci text-amber-300 font-bold block mb-1.5">COMBAT MEDALS // 戦功勲章レコード (達成でスクラップ報酬獲得)</span>
+            <span class="text-[10px] font-sci text-amber-300 font-bold block mb-1.5">COMBAT MEDALS // やり込み勲章ミッション (達成で大量スクラップ報酬)</span>
             <div id="codex-medal-list" class="flex flex-col gap-1.5"></div>
           </div>
         </div>
@@ -770,13 +747,8 @@
         jpName: '地球・崩壊都市メトロポリス',
         bossName: '要塞重機 アイアン・ブルドーザー',
         themeColor: '#06b6d4',
-        recTech: '推奨コア強化: Lv.1〜',
-        enemyDmg: 1,
         desc: 'ビル廃墟に巣食う人形ロボット軍団と盾持ち精鋭部隊を撃破し、重機ボスを粉砕せよ。',
-        unlockDrop: 'ウサギ耳センサー＆月兎杵バンカー＆プリズム',
-        stdRewardText: '次惑星解放 ＋ コア基本連射力+15% (初回+300 SCRAP)',
-        hardRewardId: 'homing_swarm',
-        hardRewardText: 'コア必殺技『ヴァルキリー追尾ミサイル嵐』解禁 (初回+800 SCRAP)'
+        unlockDrop: 'ウサギ耳センサー＆月兎杵バンカー＆プリズム'
       },
       {
         id: 2,
@@ -785,13 +757,8 @@
         jpName: '月・静寂のクレーター宙域',
         bossName: '月面臼砲母艦 ルナ・ペストル',
         themeColor: '#c084fc',
-        recTech: '推奨コア強化: Lv.4〜 (敵HP 3.2倍 / 敵弾威力 2)',
-        enemyDmg: 2,
-        desc: '【難易度上昇】跳躍する変異月兎と狙撃レーザー砲が待ち受ける。装甲強化なしでは即座に砕かれる！',
-        unlockDrop: 'スコーピオン多連装ミサイル＆爆風装甲',
-        stdRewardText: '次惑星解放 ＋ 光学レーザー威力+20% (初回+600 SCRAP)',
-        hardRewardId: 'prism_matrix',
-        hardRewardText: 'コア必殺技『ルナティック・プリズム結界』解禁 (初回+1500 SCRAP)'
+        desc: '跳躍する変異月兎と予告線狙撃レーザー砲が待ち受ける低重力クレーター。',
+        unlockDrop: 'スコーピオン多連装ミサイル＆爆風装甲'
       },
       {
         id: 3,
@@ -800,13 +767,8 @@
         jpName: '火星・灼熱の赤色砂漠',
         bossName: '灼熱採掘母艦 クリムゾン・クィーン',
         themeColor: '#f97316',
-        recTech: '推奨コア強化: Lv.8〜 (敵HP 7.5倍 / 敵弾威力 3)',
-        enemyDmg: 3,
-        desc: '【高難度】赤い砂嵐から現れる重装甲機械昆虫の猛爆撃地帯。機関出力と装甲剛性の強化が必須！',
-        unlockDrop: '毒ガス＆粉塵スプレッダー',
-        stdRewardText: '次惑星解放 ＋ 実弾・ミサイル威力+25% (初回+1100 SCRAP)',
-        hardRewardId: 'meteor_napalm',
-        hardRewardText: 'コア必殺技『クリムゾン・メテオストライク』解禁 (初回+2500 SCRAP)'
+        desc: '赤い砂嵐から現れる巨大機械昆虫（甲虫・サソリ・大ムカデ）の猛爆撃地帯。',
+        unlockDrop: '毒ガス＆粉塵スプレッダー'
       },
       {
         id: 4,
@@ -815,13 +777,8 @@
         jpName: '木星・暴風大赤斑カオス',
         bossName: '暴風大赤斑 サイクロン・キマイラ',
         themeColor: '#a855f7',
-        recTech: '推奨コア強化: Lv.13〜 (敵HP 16倍 / 敵弾威力 4)',
-        enemyDmg: 4,
-        desc: '【超高難度】流動砂と毒ガスが充満する暴風圏。高レベルな24枠ビルドとコア強化で粉塵爆発を制せよ！',
-        unlockDrop: '赫灼・日輪プラズマ砲',
-        stdRewardText: '次惑星解放 ＋ 粉塵爆発＆属性威力+30% (初回+1800 SCRAP)',
-        hardRewardId: 'tempest_detonation',
-        hardRewardText: 'コア必殺技『テンペスト・連鎖粉塵大爆破』解禁 (初回+4000 SCRAP)'
+        desc: '流動する砂の塊と毒ガスが充満する嵐。火花による「粉塵爆発」を制せよ！',
+        unlockDrop: '赫灼・日輪プラズマ砲'
       },
       {
         id: 5,
@@ -830,112 +787,20 @@
         jpName: '太陽・白熱の創世神域',
         bossName: '恒星創世神 ヘリオス・オメガ',
         themeColor: '#fbbf24',
-        recTech: '推奨コア強化: Lv.18〜 (敵HP 32倍 / 敵弾威力 5)',
-        enemyDmg: 5,
-        desc: '【最終試練】あらゆる天災と超新星爆発で全てを終わらせる太陽の絶対神。極限まで鍛えた要塞で挑め！',
-        unlockDrop: '太陽系完全奪還の証',
-        stdRewardText: '全ウェポン最終出力+35% (初回+3000 SCRAP)',
-        hardRewardId: 'genesis_nova',
-        hardRewardText: 'コア必殺技『ヘリオス・創世スーパーノヴァ』解禁 (初回+7000 SCRAP)'
+        desc: '命を産み、あらゆる天災と超新星爆発で全てを終わらせる太陽の絶対神との最終決戦。',
+        unlockDrop: '太陽系完全奪還＆無限宙域の称号'
       },
       {
         id: 6,
         code: 'ABYSS',
         name: 'STAGE EX: ABYSS',
         jpName: '外縁宙域・無限サバイバル遠征',
-        bossName: '歴戦ボス連続襲来（10Wave毎）',
+        bossName: '歴戦ボス連続襲来（5Wave毎）',
         themeColor: '#f43f5e',
-        recTech: '難易度固定: WAVE進行に応じて段階強化',
-        enemyDmg: 2,
-        desc: '【極限サバイバル】10Wave毎に歴戦ボスが襲来！50Wave到達で『深淵重力砲』、100Wave到達で究極『創世終焉砲』が解禁！',
-        unlockDrop: '50W:深淵重力砲 / 100W:創世終焉砲',
-        stdRewardText: '50Wave到達: 深淵重力砲アビス・シンギュラリティ解禁',
-        hardRewardId: null,
-        hardRewardText: '100Wave到達: 創世終焉砲オメガ・ジェネシス解禁'
+        desc: '【やり込みエンドレス】50Wave到達で『深淵重力砲』、100Wave到達で最強『創世終焉砲』が解禁！10Wave毎の中間拠点から出撃可能！',
+        unlockDrop: '50W:深淵重力砲 / 100W:創世終焉砲'
       }
     ];
-
-    function getAbyssBossStage(wave) {
-      return ((Math.max(1, Math.floor(wave / 10)) - 1) % 5) + 1;
-    }
-
-    // --- 3.2 K-CORE ULTIMATE ARTS CATALOG (コア必殺技定義) ---
-    const CORE_ULTIMATES = {
-      buster_beam: {
-        id: 'buster_beam',
-        name: 'バスター・コアビーム',
-        short: '🔥CORE BEAM',
-        unlockCond: '初期装備（デフォルト）',
-        baseCost: 140,
-        maxLv: 10,
-        getDesc: (lv) => {
-          const sec = (5.0 + (lv - 1) * 0.55).toFixed(1);
-          const pwr = Math.round(100 + (lv - 1) * 22);
-          return `K-COREから正面へ極太の貫通バスタービームを【${sec}秒間】照射し、触れる敵弾を消去しつつ大ダメージ（威力${pwr}%）を与える！`;
-        }
-      },
-      homing_swarm: {
-        id: 'homing_swarm',
-        name: 'ヴァルキリー追尾ミサイル嵐',
-        short: '🚀MISSILE SWARM',
-        unlockCond: 'STAGE 1 [HARDCORE] クリア特典',
-        baseCost: 200,
-        maxLv: 10,
-        getDesc: (lv) => {
-          const count = 16 + (lv - 1) * 4;
-          return `K-COREから全域の敵を自動追尾する高威力ホーミングミサイルを合計【${count}発】一斉連射する！（強化でミサイル数増加）`;
-        }
-      },
-      prism_matrix: {
-        id: 'prism_matrix',
-        name: 'ルナティック・プリズム結界',
-        short: '💎PRISM MATRIX',
-        unlockCond: 'STAGE 2 [HARDCORE] クリア特典',
-        baseCost: 260,
-        maxLv: 10,
-        getDesc: (lv) => {
-          const sec = (5.0 + (lv - 1) * 0.55).toFixed(1);
-          const lasers = 12 + (lv - 1) * 3;
-          return `要塞を【${sec}秒間】無敵の月光プリズム障壁で包み、計【${lasers}発】の誘導プリズムレーザーを全方位へ自動掃射する！`;
-        }
-      },
-      meteor_napalm: {
-        id: 'meteor_napalm',
-        name: 'クリムゾン・メテオストライク',
-        short: '☄️METEOR STRIKE',
-        unlockCond: 'STAGE 3 [HARDCORE] クリア特典',
-        baseCost: 340,
-        maxLv: 10,
-        getDesc: (lv) => {
-          const meteors = 10 + (lv - 1) * 3;
-          return `画面上部から灼熱の巨大隕石を【${meteors}発】連続投下！敵弾を吹き飛ばし、画面全域の敵に壊滅的な爆風ダメージを与える！`;
-        }
-      },
-      tempest_detonation: {
-        id: 'tempest_detonation',
-        name: 'テンペスト・連鎖粉塵大爆破',
-        short: '🌪️TEMPEST BLAST',
-        unlockCond: 'STAGE 4 [HARDCORE] クリア特典',
-        baseCost: 440,
-        maxLv: 10,
-        getDesc: (lv) => {
-          const blasts = 5 + (lv - 1) * 1;
-          return `戦場全域に高濃度プラズマガスを散布し、直後に【${blasts}連撃】の全域粉塵大爆発を引き起こして敵群と弾幕を一掃する！`;
-        }
-      },
-      genesis_nova: {
-        id: 'genesis_nova',
-        name: 'ヘリオス・創世スーパーノヴァ',
-        short: '☀️GENESIS NOVA',
-        unlockCond: 'STAGE 5 [HARDCORE] クリア特典',
-        baseCost: 600,
-        maxLv: 10,
-        getDesc: (lv) => {
-          const sec = (6.0 + (lv - 1) * 0.6).toFixed(1);
-          return `太陽神の権能を発動！【${sec}秒間】全装甲を無敵化＆損傷パーツ修復しつつ、極大の黄金創世ビームと日輪弾で画面全域を浄化する究極必殺技！`;
-        }
-      }
-    };
 
     // --- 3.5 ACHIEVEMENT MEDALS (やり込み勲章定義) ---
     const MEDAL_DEFS = [
@@ -967,17 +832,6 @@
       sunCleared: false,
       partStats: {},
       claimedMedals: [],
-      stageClears: {},
-      unlockedUltimates: ['buster_beam'],
-      equippedUltimate: 'buster_beam',
-      ultimateLevels: {
-        buster_beam: 1,
-        homing_swarm: 1,
-        prism_matrix: 1,
-        meteor_napalm: 1,
-        tempest_detonation: 1,
-        genesis_nova: 1
-      },
       upgrades: {
         slots: 2,       // 1. Initial pre-equip slots (2 slots per level, up to 24!)
         magnet: 1,      // 2. Magnet pickup radius
@@ -1005,18 +859,7 @@
 
     function getPartMasteryLevel(type) {
       const count = (saveData.partStats && saveData.partStats[type]) || 0;
-      return Math.min(10, Math.floor(count / 12));
-    }
-
-    function getStageClearBonusDamageMult() {
-      const sc = saveData.stageClears || {};
-      let mult = 1.0;
-      if (sc['1_std']) mult += 0.15;
-      if (sc['2_std']) mult += 0.20;
-      if (sc['3_std']) mult += 0.25;
-      if (sc['4_std']) mult += 0.30;
-      if (sc['5_std']) mult += 0.35;
-      return mult;
+      return Math.min(5, Math.floor(count / 12));
     }
 
     function loadSave() {
@@ -1029,15 +872,8 @@
             ...parsed,
             partStats: { ...(saveData.partStats || {}), ...(parsed.partStats || {}) },
             claimedMedals: parsed.claimedMedals || [],
-            stageClears: { ...(saveData.stageClears || {}), ...(parsed.stageClears || {}) },
-            unlockedUltimates: parsed.unlockedUltimates || ['buster_beam'],
-            equippedUltimate: parsed.equippedUltimate || 'buster_beam',
-            ultimateLevels: { ...(saveData.ultimateLevels || {}), ...(parsed.ultimateLevels || {}) },
             upgrades: { ...saveData.upgrades, ...(parsed.upgrades || {}) }
           };
-          if (saveData.difficultyMult !== 1.0 && saveData.difficultyMult !== 2.2) {
-            saveData.difficultyMult = 1.0;
-          }
         }
       } catch (e) {
         console.warn('Save load fallback', e);
@@ -1203,7 +1039,7 @@
 
         // Stars
         this.stars.forEach(s => {
-          c.fillStyle = stageId === 5 ? `rgba(254, 240, 138, ${s.alpha})` : stageId === 6 ? `rgba(244, 114, 182, ${s.alpha})` : `rgba(186, 230, 253, ${s.alpha})`;
+          c.fillStyle = stageId === 5 ? `rgba(254, 240, 138, ${s.alpha})` : `rgba(186, 230, 253, ${s.alpha})`;
           c.fillRect(s.x, s.y, s.size, s.size);
         });
 
@@ -1327,21 +1163,6 @@
             c.fillStyle = 'rgba(253, 224, 71, 0.3)';
             c.fillRect(Math.cos(a) * 120 - 4, Math.sin(a) * 120 - 4, 8, 8);
           }
-          c.restore();
-        } else if (stageId === 6) {
-          // STAGE EX: ABYSS - Deep-Space Singularity Vortex
-          c.save();
-          c.translate(width * 0.5, height * 0.32);
-          c.rotate(-this.searchlightAngle * 0.45);
-          for (let r = 135; r >= 30; r -= 26) {
-            c.strokeStyle = r % 52 === 0 ? 'rgba(244, 63, 94, 0.18)' : 'rgba(129, 140, 248, 0.18)';
-            c.lineWidth = 4;
-            c.setLineDash([14, 10]);
-            c.beginPath();
-            c.arc(0, 0, r, 0, Math.PI * 2);
-            c.stroke();
-          }
-          c.setLineDash([]);
           c.restore();
         }
 
@@ -1685,17 +1506,13 @@
         this.invulnTimer = 0;
         this.mochiBarrierTimer = 0;
         this.overclockTimer = 0;
-        this.coreUltTimer = 0;
-        this.coreUltMaxTimer = 0;
-        this.coreUltType = saveData.equippedUltimate || 'buster_beam';
         this.maxPartsAchieved = 1;
         this.coreShields = 1 + (saveData.upgrades.coreShield - 1);
         this.maxCoreShields = this.coreShields;
 
-        const clearBonusMult = getStageClearBonusDamageMult();
         this.buffs = {
-          fireRateMult: (saveData.stageClears && saveData.stageClears['1_std']) ? 1.15 : 1.0,
-          damageMult: (1.0 + (saveData.upgrades.firepower - 1) * 0.28) * clearBonusMult,
+          fireRateMult: 1.0,
+          damageMult: 1.0 + (saveData.upgrades.firepower - 1) * 0.22,
           magnetBonus: 0,
           laserSplit: false
         };
@@ -1722,19 +1539,7 @@
 
         sorted.forEach(item => {
           if (item.gx === 0 && item.gy === 0) return;
-          if (this.canDockAt(item.gx, item.gy)) {
-            this.dockPart(item.gx, item.gy, item.type, true);
-          } else {
-            // If an outer slot was placed without an adjacent bridge, snap it to the nearest valid slot so it is never lost
-            const fallback = this.findBestSlotFor(
-              this.x + item.gx * GRID_SIZE,
-              this.y + item.gy * GRID_SIZE,
-              1.0
-            );
-            if (fallback) {
-              this.dockPart(fallback.gx, fallback.gy, item.type, true);
-            }
-          }
+          this.dockPart(item.gx, item.gy, item.type, true);
         });
         this.checkStructuralIntegrity(true);
       }
@@ -1820,13 +1625,11 @@
         const spec = WEAPON_CATALOG[type] || WEAPON_CATALOG[PART_TYPE.IRON];
         // Armor & Melee parts benefit fully from Part Armor tech and Front Vanguard Zone (gy < 0)
         const isArmorOrMelee = spec.isArmor || spec.isMelee;
-        const techBonusHp = isArmorOrMelee
-          ? (saveData.upgrades.partHp - 1) * 2
-          : Math.floor((saveData.upgrades.partHp - 1) * 0.8);
-        const frontZoneBonusHp = (gy < 0 && isArmorOrMelee) ? 2 : 0;
+        const techBonusHp = isArmorOrMelee ? (saveData.upgrades.partHp - 1) : Math.floor((saveData.upgrades.partHp - 1) / 3);
+        const frontZoneBonusHp = (gy < 0 && isArmorOrMelee) ? 1 : 0;
         const masteryLv = getPartMasteryLevel(type);
         const evoBonusHp = this.getCountByType(type) >= 2 && type !== PART_TYPE.IRON ? 1 : 0;
-        const totalHp = spec.hp + techBonusHp + frontZoneBonusHp + Math.floor(masteryLv / 2) + evoBonusHp;
+        const totalHp = spec.hp + techBonusHp + frontZoneBonusHp + Math.floor(masteryLv / 3) + evoBonusHp;
 
         this.parts.set(`${gx},${gy}`, {
           gx, gy,
@@ -1973,87 +1776,6 @@
         if (this.mochiBarrierTimer > 0) this.mochiBarrierTimer--;
         if (this.overclockTimer > 0) this.overclockTimer--;
 
-        // Handle Active K-CORE ULTIMATE Execution
-        if (this.coreUltTimer > 0) {
-          this.coreUltTimer--;
-          const uType = this.coreUltType;
-          const uLv = (saveData.ultimateLevels && saveData.ultimateLevels[uType]) || 1;
-          const pwrMult = this.buffs.damageMult * (1 + (uLv - 1) * 0.22);
-
-          if (uType === 'buster_beam' || uType === 'genesis_nova') {
-            // Continuous Giant Core Buster Beam!
-            const beamWidth = uType === 'genesis_nova' ? 46 : 30;
-            const beamDmg = (uType === 'genesis_nova' ? 3.4 : 2.1) * pwrMult;
-            // Erase enemy bullets inside the beam corridor
-            enemyBullets.forEach(eb => {
-              if (Math.abs(eb.x - this.x) < beamWidth + eb.r && eb.y < this.y) {
-                eb.alive = false;
-                if (animTick % 3 === 0) createSparks(eb.x, eb.y, 1, '#fde047');
-              }
-            });
-            // Damage all enemies & boss in the beam corridor
-            if (animTick % 3 === 0) {
-              enemies.forEach(en => {
-                if (Math.abs(en.x - this.x) < beamWidth + en.radius && en.y < this.y + 10) {
-                  en.takeDamage(beamDmg);
-                  createSparks(en.x, en.y + 10, 2, '#f0abfc');
-                }
-              });
-              if (activeBoss && activeBoss.alive && Math.abs(activeBoss.x - this.x) < beamWidth + activeBoss.radius) {
-                activeBoss.takeDamage(beamDmg * 1.15);
-                createSparks(this.x + (Math.random() - 0.5) * 20, activeBoss.y + 25, 2, '#fde047');
-              }
-            }
-            if (uType === 'genesis_nova' && this.coreUltTimer % 12 === 0) {
-              for (let i = -2; i <= 2; i++) {
-                if (i === 0) continue;
-                spawnPlayerBullet(this.x, this.y - 16, i * 3.5, -13, 'solar', 4.5 * pwrMult, true);
-              }
-            }
-          } else if (uType === 'homing_swarm') {
-            // Rapidly launch bursts of Homing Valkyrie Missiles
-            if (this.coreUltTimer % 5 === 0) {
-              const side = (this.coreUltTimer % 10 === 0) ? -1 : 1;
-              const spread = (Math.random() - 0.5) * 7;
-              spawnPlayerBullet(this.x + side * 14, this.y, side * 4.5 + spread, -6.5, 'missile', 4.2 * pwrMult, true, 120);
-              sound.playShot(340, 0.05, 'square', 0.035);
-            }
-          } else if (uType === 'prism_matrix') {
-            this.mochiBarrierTimer = Math.max(this.mochiBarrierTimer, 4);
-            if (this.coreUltTimer % 10 === 0) {
-              for (let i = 0; i < 3; i++) {
-                const a = -Math.PI / 2 + (i - 1) * 0.45 + Math.sin(animTick * 0.1) * 0.3;
-                spawnPlayerBullet(this.x, this.y - 10, Math.cos(a) * 14, Math.sin(a) * 14, 'laser', 3.4 * pwrMult, true, 95);
-              }
-              sound.playLaser();
-            }
-          } else if (uType === 'meteor_napalm') {
-            if (this.coreUltTimer % 8 === 0) {
-              const mx = 35 + Math.random() * (width - 70);
-              const my = 60 + Math.random() * (height * 0.55);
-              sound.playExplode(false);
-              createExplosion(mx, my, 75, '#f97316', true);
-              triggerScreenShake(5);
-              enemyBullets.forEach(eb => {
-                if (Math.hypot(eb.x - mx, eb.y - my) < 85) eb.alive = false;
-              });
-              enemies.forEach(en => {
-                if (Math.hypot(en.x - mx, en.y - my) < 95) en.takeDamage(16 * pwrMult);
-              });
-              if (activeBoss && activeBoss.alive && Math.hypot(activeBoss.x - mx, activeBoss.y - my) < 120) {
-                activeBoss.takeDamage(18 * pwrMult);
-              }
-            }
-          } else if (uType === 'tempest_detonation') {
-            if (this.coreUltTimer % 12 === 0) {
-              const gx = 45 + Math.random() * (width - 90);
-              const gy = 80 + Math.random() * (height * 0.5);
-              gasClouds.push({ x: gx, y: gy, r: 42, life: 40, isEnemy: false });
-              triggerDustExplosion(gx, gy, false, 20 * pwrMult);
-            }
-          }
-        }
-
         // Apply physical knockback velocity with smooth damping
         if (Math.abs(this.vx) > 0.1 || Math.abs(this.vy) > 0.1) {
           this.x = Math.max(28, Math.min(width - 28, this.x + this.vx));
@@ -2110,17 +1832,17 @@
             const interval = Math.max(14, Math.round(28 * wingRateFactor));
             if ((Math.floor(this.shootTimer) + hash) % interval === 0) {
               part.recoil = -4;
-              spawnPlayerBullet(wx, wy - 16 * currentCameraScale, 0, -16, 'laser', 3.1 * totalWeaponMult, hasBunnyEar);
+              spawnPlayerBullet(wx, wy - 16 * currentCameraScale, 0, -16, 'laser', 1.85 * totalWeaponMult, hasBunnyEar);
               if (hasPrism) {
-                spawnPlayerBullet(wx, wy - 14 * currentCameraScale, -3.5, -15, 'laser', 2.0 * totalWeaponMult, hasBunnyEar);
-                spawnPlayerBullet(wx, wy - 14 * currentCameraScale, 3.5, -15, 'laser', 2.0 * totalWeaponMult, hasBunnyEar);
+                spawnPlayerBullet(wx, wy - 14 * currentCameraScale, -3.5, -15, 'laser', 1.2 * totalWeaponMult, hasBunnyEar);
+                spawnPlayerBullet(wx, wy - 14 * currentCameraScale, 3.5, -15, 'laser', 1.2 * totalWeaponMult, hasBunnyEar);
               }
               sound.playLaser();
             }
           } else if (part.type === PART_TYPE.PESTLE) {
             if ((Math.floor(this.shootTimer) + hash) % 40 === 0) {
               part.recoil = -8;
-              spawnPlayerBullet(wx, wy - 20 * currentCameraScale, 0, -9.5, 'pestle', 7.2 * totalWeaponMult * frontMeleeBonus, false, 28);
+              spawnPlayerBullet(wx, wy - 20 * currentCameraScale, 0, -9.5, 'pestle', 4.8 * totalWeaponMult * frontMeleeBonus, false, 28);
               sound.playPilebunker();
             }
           } else if (part.type === PART_TYPE.MISSILE) {
@@ -2153,9 +1875,9 @@
             // Wave 100 Ultimate Weapon: Genesis Piercing Beam + Homing Astral Blades
             if ((Math.floor(this.shootTimer) + hash) % 18 === 0) {
               part.recoil = -4;
-              spawnPlayerBullet(wx, wy - 18 * currentCameraScale, 0, -18, 'omega_beam', 9.2 * totalWeaponMult, false, 60);
-              spawnPlayerBullet(wx - 10, wy, -4.5, -10, 'omega_blade', 3.6 * totalWeaponMult, true, 90);
-              spawnPlayerBullet(wx + 10, wy, 4.5, -10, 'omega_blade', 3.6 * totalWeaponMult, true, 90);
+              spawnPlayerBullet(wx, wy - 18 * currentCameraScale, 0, -18, 'omega_beam', 4.6 * totalWeaponMult, false, 60);
+              spawnPlayerBullet(wx - 10, wy, -4.5, -10, 'omega_blade', 3.2 * totalWeaponMult, true, 90);
+              spawnPlayerBullet(wx + 10, wy, 4.5, -10, 'omega_blade', 3.2 * totalWeaponMult, true, 90);
               sound.playLaser();
             }
           }
@@ -2165,39 +1887,6 @@
       draw(c, animTick, stageId) {
         c.save();
         c.translate(this.x, this.y);
-
-        // Draw Active Core Buster Beam / Genesis Nova Beam before scaling down parts
-        if (this.coreUltTimer > 0 && (this.coreUltType === 'buster_beam' || this.coreUltType === 'genesis_nova')) {
-          const isGenesis = this.coreUltType === 'genesis_nova';
-          const bw = isGenesis ? 46 : 30;
-          const pulseW = bw + Math.sin(animTick * 0.6) * 6;
-          const beamGrad = c.createLinearGradient(-pulseW, 0, pulseW, 0);
-          if (isGenesis) {
-            beamGrad.addColorStop(0, 'rgba(251, 191, 36, 0)');
-            beamGrad.addColorStop(0.25, 'rgba(251, 191, 36, 0.75)');
-            beamGrad.addColorStop(0.5, '#ffffff');
-            beamGrad.addColorStop(0.75, 'rgba(251, 191, 36, 0.75)');
-            beamGrad.addColorStop(1, 'rgba(251, 191, 36, 0)');
-          } else {
-            beamGrad.addColorStop(0, 'rgba(232, 121, 249, 0)');
-            beamGrad.addColorStop(0.25, 'rgba(6, 182, 212, 0.75)');
-            beamGrad.addColorStop(0.5, '#ffffff');
-            beamGrad.addColorStop(0.75, 'rgba(232, 121, 249, 0.75)');
-            beamGrad.addColorStop(1, 'rgba(232, 121, 249, 0)');
-          }
-          c.fillStyle = beamGrad;
-          c.fillRect(-pulseW, -height - 50, pulseW * 2, height + 50);
-
-          // Energy rings climbing the beam
-          c.strokeStyle = isGenesis ? '#fef08a' : '#67e8f9';
-          c.lineWidth = 2.5;
-          for (let ry = -((animTick * 18) % 90); ry > -height; ry -= 90) {
-            c.beginPath();
-            c.ellipse(0, ry, pulseW * 0.85, 8, 0, 0, Math.PI * 2);
-            c.stroke();
-          }
-        }
-
         c.scale(currentCameraScale, currentCameraScale);
 
         if (this.invulnTimer > 0 && Math.floor(this.invulnTimer / 2) % 2 === 0) {
@@ -2272,64 +1961,57 @@
         this.knockVy = 0;
         this.aimAngle = Math.PI / 2;
 
-        // Stage 6 (ABYSS) uses balanced power-curve scaling so Wave 100 is tough but 100% clearable with maxed tech!
-        const diff = stageId === 6 ? 1.25 : (saveData.difficultyMult || 1.0);
-        const stageMultipliers = [1.0, 1.0, 3.2, 7.5, 16.0, 32.0];
-        const stageScale = stageId === 6
-          ? (1.4 + Math.pow(currentWave, 1.28) * 0.22)
-          : (stageMultipliers[stageId] || 1.0);
+        const diff = saveData.difficultyMult || 1.0;
+        const effectiveStage = stageId === 6 ? 2 + Math.floor(currentWave * 0.65) : stageId;
+        const stageScale = 1 + (effectiveStage - 1) * 0.78;
         const sizeScale = 1 + Math.max(0, fortPartsCount - 3) * 0.055;
         const totalMult = diff * stageScale * sizeScale;
 
-        // Higher stages deal heavier bullet damage, requiring Part Armor Tech upgrades!
-        const baseStageDmg = stageId === 6 ? Math.min(7, 1 + Math.floor(currentWave / 16)) : stageId;
-        this.bulletDmg = Math.max(1, Math.round(baseStageDmg * (diff > 1.5 ? 1.5 : 1.0)));
-
         if (subType === 'mannequin') {
           this.radius = 16;
-          this.hp = Math.round(24 * totalMult);
+          this.hp = Math.round(19 * totalMult);
           this.vy = 1.05 + Math.random() * 0.35;
           this.vx = (Math.random() - 0.5) * 1.0;
         } else if (subType === 'sentinel') {
           this.radius = 22;
-          this.hp = Math.round(62 * totalMult);
-          this.vy = 0.75;
+          this.hp = Math.round(48 * totalMult);
+          this.vy = 0.72;
           this.vx = 0;
         } else if (subType === 'rabbit') {
           this.radius = 16;
-          this.hp = Math.round(34 * totalMult);
-          this.vy = 1.55;
-          this.vx = (Math.random() < 0.5 ? -1 : 1) * 2.2;
+          this.hp = Math.round(26 * totalMult);
+          this.vy = 1.45;
+          this.vx = (Math.random() < 0.5 ? -1 : 1) * 2.1;
         } else if (subType === 'regolith') {
           this.radius = 23;
-          this.hp = Math.round(72 * totalMult);
-          this.vy = 0.7;
+          this.hp = Math.round(54 * totalMult);
+          this.vy = 0.65;
           this.vx = 0;
         } else if (subType === 'scarab') {
           this.radius = 20;
-          this.hp = Math.round(48 * totalMult);
-          this.vy = 1.1;
+          this.hp = Math.round(36 * totalMult);
+          this.vy = 1.05;
           this.vx = Math.sin(this.y * 0.03) * 1.2;
         } else if (subType === 'scorpion') {
           this.radius = 24;
-          this.hp = Math.round(85 * totalMult);
-          this.vy = 0.82;
+          this.hp = Math.round(62 * totalMult);
+          this.vy = 0.78;
           this.vx = 0;
         } else if (subType === 'sandman') {
           this.radius = 22;
-          this.hp = Math.round(68 * totalMult);
-          this.vy = 0.95;
+          this.hp = Math.round(48 * totalMult);
+          this.vy = 0.9;
           this.vx = Math.sin(this.timer * 0.05) * 1.1;
         } else if (subType === 'sparkfly') {
           this.radius = 14;
-          this.hp = Math.round(32 * totalMult);
-          this.vy = 1.95;
+          this.hp = Math.round(22 * totalMult);
+          this.vy = 1.85;
           this.vx = (Math.random() - 0.5) * 2.6;
         } else {
           // seraph (Stage 5 Angelic Construct)
           this.radius = 20;
-          this.hp = Math.round(76 * totalMult);
-          this.vy = 1.2;
+          this.hp = Math.round(48 * totalMult);
+          this.vy = 1.15;
           this.vx = Math.cos(this.timer * 0.05) * 1.4;
         }
         this.maxHp = this.hp;
@@ -2344,8 +2026,7 @@
           sound.playExplode(false);
           createExplosion(this.x, this.y, this.radius * 1.2, '#f43f5e');
           spawnDebrisFromEnemy(this.x, this.y, this.stageId, this.subType);
-          const rewardStage = this.stageId === 6 ? Math.max(1, Math.floor(currentWave / 3)) : this.stageId;
-          addExpAndScore(14 + rewardStage * 3, 180 * rewardStage);
+          addExpAndScore(14, 160 * this.stageId);
         }
       }
 
@@ -2366,57 +2047,58 @@
         if (!fortress) return;
         const ang = Math.atan2(fortress.y - this.y, fortress.x - this.x);
         this.aimAngle = ang;
-        const bDmg = this.bulletDmg || 1;
-        const spdBoost = 1 + Math.min(0.45, (this.stageId - 1) * 0.09);
 
-        // Stage-scaled enemy fire patterns
-        if (this.subType === 'mannequin' && this.timer % 88 === 0 && this.y < height * 0.68) {
-          spawnEnemyBullet(this.x, this.y + 12, Math.cos(ang) * 2.8 * spdBoost, Math.sin(ang) * 2.8 * spdBoost, '#facc15', 6, 'pod', true, bDmg);
-        } else if (this.subType === 'sentinel' && this.timer % 105 === 0 && this.y < height * 0.68) {
+        // FAIR, DODGEABLE & ENGAGING BULLET PATTERNS:
+        // ~45% lower fire frequency, ~30% slower bullet speed, mix of destructible yellow pods & spaced plasma bolts
+        if (this.subType === 'mannequin' && this.timer % 95 === 0 && this.y < height * 0.65) {
+          // 1 Destructible energy pod aimed + 1 slow plasma bolt
+          spawnEnemyBullet(this.x, this.y + 12, Math.cos(ang) * 2.7, Math.sin(ang) * 2.7, '#facc15', 6, 'pod', true);
+        } else if (this.subType === 'sentinel' && this.timer % 115 === 0 && this.y < height * 0.65) {
+          // Wide-corridor 3-way spread (plenty of room to weave)
           for (let i = -1; i <= 1; i++) {
-            const a = Math.PI / 2 + i * 0.40;
+            const a = Math.PI / 2 + i * 0.42;
             const isDestructible = i === 0;
             spawnEnemyBullet(
               this.x, this.y + 14,
-              Math.cos(a) * 2.7 * spdBoost, Math.sin(a) * 2.7 * spdBoost,
+              Math.cos(a) * 2.6, Math.sin(a) * 2.6,
               isDestructible ? '#f97316' : '#f43f5e',
               isDestructible ? 7 : 5,
               isDestructible ? 'pod' : null,
-              isDestructible,
-              bDmg
+              isDestructible
             );
           }
-        } else if (this.subType === 'rabbit' && this.timer % 80 === 0 && this.y < height * 0.68) {
-          spawnEnemyBullet(this.x, this.y + 8, Math.cos(ang) * 3.4 * spdBoost, Math.sin(ang) * 3.4 * spdBoost, '#f472b6', 5, null, false, bDmg);
+        } else if (this.subType === 'rabbit' && this.timer % 86 === 0 && this.y < height * 0.65) {
+          spawnEnemyBullet(this.x, this.y + 8, Math.cos(ang) * 3.3, Math.sin(ang) * 3.3, '#f472b6', 5, null, false);
         } else if (this.subType === 'regolith') {
-          this.laserCharge = (this.timer % 120);
-          if (this.laserCharge === 114 && this.y < height * 0.72) {
-            for (let s = 3.8; s <= 6.0; s += 1.1) {
-              spawnEnemyBullet(this.x, this.y + 14, 0, s * spdBoost, '#c084fc', 5, null, false, bDmg + 1);
+          // 1.1s clear laser telegraph before firing
+          this.laserCharge = (this.timer % 130);
+          if (this.laserCharge === 124 && this.y < height * 0.7) {
+            for (let s = 3.6; s <= 5.6; s += 1.0) {
+              spawnEnemyBullet(this.x, this.y + 14, 0, s, '#c084fc', 5, null, false);
             }
           }
-        } else if (this.subType === 'scarab' && this.timer % 95 === 0) {
-          spawnEnemyBullet(this.x, this.y + 12, (Math.random() - 0.5) * 1.5, 2.7 * spdBoost, '#f97316', 8, 'bomb', true, bDmg + 1);
-        } else if (this.subType === 'scorpion' && this.timer % 98 === 0 && this.y < height * 0.68) {
-          spawnEnemyBullet(this.x - 14, this.y, Math.cos(ang - 0.34) * 3.2 * spdBoost, Math.sin(ang - 0.34) * 3.2 * spdBoost, '#fb923c', 6, 'pod', true, bDmg);
-          spawnEnemyBullet(this.x + 14, this.y, Math.cos(ang + 0.34) * 3.2 * spdBoost, Math.sin(ang + 0.34) * 3.2 * spdBoost, '#fb923c', 6, 'pod', true, bDmg);
-          spawnEnemyBullet(this.x, this.y + 10, Math.cos(ang) * 3.3 * spdBoost, Math.sin(ang) * 3.3 * spdBoost, '#ef4444', 5, null, false, bDmg);
-        } else if (this.subType === 'sandman' && this.timer % 105 === 0) {
+        } else if (this.subType === 'scarab' && this.timer % 105 === 0) {
+          // Destructible cluster bomb pod
+          spawnEnemyBullet(this.x, this.y + 12, (Math.random() - 0.5) * 1.4, 2.5, '#f97316', 8, 'bomb', true);
+        } else if (this.subType === 'scorpion' && this.timer % 110 === 0 && this.y < height * 0.65) {
+          // Twin destructible missiles + 1 plasma bolt with wide gap
+          spawnEnemyBullet(this.x - 14, this.y, Math.cos(ang - 0.36) * 3.1, Math.sin(ang - 0.36) * 3.1, '#fb923c', 6, 'pod', true);
+          spawnEnemyBullet(this.x + 14, this.y, Math.cos(ang + 0.36) * 3.1, Math.sin(ang + 0.36) * 3.1, '#fb923c', 6, 'pod', true);
+        } else if (this.subType === 'sandman' && this.timer % 115 === 0) {
           gasClouds.push({
             x: this.x + (Math.random() - 0.5) * 24,
             y: this.y + 22,
-            r: 36,
+            r: 34,
             life: 210,
             isEnemy: true
           });
-          spawnEnemyBullet(this.x, this.y + 12, Math.cos(ang) * 2.8 * spdBoost, Math.sin(ang) * 2.8 * spdBoost, '#a855f7', 5, null, false, bDmg);
-        } else if (this.subType === 'sparkfly' && this.timer % 82 === 0) {
-          spawnEnemyBullet(this.x, this.y, Math.cos(ang) * 3.7 * spdBoost, Math.sin(ang) * 3.7 * spdBoost, '#facc15', 6, 'spark', true, bDmg);
-        } else if (this.subType === 'seraph' && this.timer % 82 === 0 && this.y < height * 0.68) {
-          for (let i = -1; i <= 1; i++) {
-            const a = ang + i * 0.28;
-            const isDestr = i !== 0;
-            spawnEnemyBullet(this.x, this.y, Math.cos(a) * 3.5 * spdBoost, Math.sin(a) * 3.5 * spdBoost, isDestr ? '#fde047' : '#ef4444', 6, isDestr ? 'pod' : null, isDestr, bDmg);
+          spawnEnemyBullet(this.x, this.y + 12, Math.cos(ang) * 2.6, Math.sin(ang) * 2.6, '#a855f7', 5, null, false);
+        } else if (this.subType === 'sparkfly' && this.timer % 90 === 0) {
+          spawnEnemyBullet(this.x, this.y, Math.cos(ang) * 3.5, Math.sin(ang) * 3.5, '#facc15', 6, 'spark', true);
+        } else if (this.subType === 'seraph' && this.timer % 92 === 0 && this.y < height * 0.65) {
+          for (let i = -1; i <= 1; i += 2) {
+            const a = ang + i * 0.32;
+            spawnEnemyBullet(this.x, this.y, Math.cos(a) * 3.2, Math.sin(a) * 3.2, '#fde047', 6, 'pod', true);
           }
         }
       }
@@ -2599,14 +2281,14 @@
     // --- 11. 5 RADICALLY DISTINCT ANIMATED PLANETARY BOSSES WITH SIGNATURE ULTIMATES ---
     class PlanetaryBoss {
       constructor(stageId, fortPartsCount) {
-        // In Stage 6 (Endless Abyss), cycle through the 5 planetary bosses every 10 waves
-        const actualVisualStage = stageId === 6 ? getAbyssBossStage(currentWave) : stageId;
+        // In Stage 6 (Endless Abyss), cycle through the 5 planetary bosses every 5 waves
+        const actualVisualStage = stageId === 6 ? ((Math.floor(currentWave / 5) - 1) % 5) + 1 : stageId;
         this.stageId = actualVisualStage;
         this.isEndlessBoss = stageId === 6;
         this.x = width / 2;
         this.y = -110;
         this.targetY = 148;
-        this.vx = 1.35 + (actualVisualStage - 1) * 0.15;
+        this.vx = 1.25;
         this.timer = 0;
         this.alive = true;
         this.enraged = false;
@@ -2619,19 +2301,13 @@
         this.ultTimer = 0;
         this.supernovaCoreHp = 0;
 
-        // Balanced Boss HP & Damage Scaling across Stages 1-5 and Wave 100 Abyss
-        const diff = this.isEndlessBoss ? 1.25 : (saveData.difficultyMult || 1.0);
-        const sizeScale = 1 + Math.max(0, fortPartsCount - 3) * 0.065;
-        const baseHps = [0, 2600, 8200, 21000, 48000, 105000];
-        if (this.isEndlessBoss) {
-          // Smooth progression from Wave 10 (~18,000 HP) to Wave 50 (~165,000 HP) to Wave 100 (~420,000 HP)
-          this.maxHp = Math.round(3200 * (1.2 + Math.pow(currentWave, 1.25) * 0.28) * sizeScale);
-        } else {
-          this.maxHp = Math.round(baseHps[this.stageId] * diff * sizeScale);
-        }
+        const diff = saveData.difficultyMult || 1.0;
+        const sizeScale = 1 + Math.max(0, fortPartsCount - 3) * 0.075;
+        const endlessScale = this.isEndlessBoss ? (1 + currentWave * 0.16) : 1.0;
+        const baseHps = [0, 1650, 2500, 3600, 4900, 7200];
+        this.maxHp = Math.round(baseHps[this.stageId] * diff * sizeScale * endlessScale);
         this.hp = this.maxHp;
         this.radius = this.stageId === 5 ? 66 : 56;
-        this.bossBulletDmg = Math.max(1, Math.round((this.isEndlessBoss ? 2 + Math.floor(currentWave / 18) : this.stageId) * (diff > 1.5 ? 1.5 : 1.0)));
       }
 
       triggerSignatureUltimate() {
@@ -2685,20 +2361,11 @@
           if (this.isEndlessBoss) {
             document.getElementById('hud-boss-wrap').classList.add('hidden');
             document.getElementById('hud-boss-wrap').classList.remove('flex');
-            const defeatedWave = currentWave;
             activeBoss = null;
-            for (let i = 0; i < 4; i++) {
-              spawnDebrisFromEnemy(this.x + (i - 1.5) * 30, this.y, 5, 'sentinel');
+            for (let i = 0; i < 3; i++) {
+              spawnDebrisFromEnemy(this.x + (i - 1) * 35, this.y, 5, 'sentinel');
             }
-            if (defeatedWave === 100) {
-              const bonus100 = 5000;
-              stageScrapEarned += bonus100;
-              saveData.scrap += bonus100;
-              writeSave();
-              setRenaMessage(`👑 祝・ABYSS WAVE 100 覇者達成！ボーナス+5000 SCRAP＆『創世終焉砲』完全解禁！`);
-            } else {
-              setRenaMessage(`W${defeatedWave} 外縁ボス撃破！ドロップしたパーツを回収して次のWaveへ進撃します！`);
-            }
+            setRenaMessage(`外縁ボス撃破！スクラップを回収してさらなる深淵Waveへ進撃します！`);
           } else {
             handleStageClear();
           }
@@ -2710,14 +2377,6 @@
         const speedMult = this.enraged ? 1.35 : 1.0;
 
         if (this.telegraphTimer > 0) this.telegraphTimer--;
-
-        // Spawn escort enemies periodically during ANY boss fight so the player can always harvest parts & rebuild!
-        if (this.timer % 190 === 0 && enemies.length < 3 && fortress) {
-          const escortTypes = ['mannequin', 'rabbit', 'scarab', 'sandman', 'seraph'];
-          const eSub = escortTypes[(this.stageId - 1) % escortTypes.length];
-          enemies.push(new Enemy(this.x - 55, this.y + 20, eSub, this.isEndlessBoss ? 6 : this.stageId, fortress.parts.size));
-          enemies.push(new Enemy(this.x + 55, this.y + 20, eSub, this.isEndlessBoss ? 6 : this.stageId, fortress.parts.size));
-        }
 
         // Trigger Signature Ultimate periodically
         const ultInterval = this.enraged ? 290 : 380;
@@ -3532,18 +3191,11 @@
     let particles = [];
 
     function spawnPlayerBullet(x, y, vx, vy, bType, dmg, homing = false, life = 95) {
-      playerBullets.push({ x, y, vx, vy, bType, dmg, homing, alive: true, life, hitTargets: new Set() });
+      playerBullets.push({ x, y, vx, vy, bType, dmg, homing, alive: true, life });
     }
 
-    function spawnEnemyBullet(x, y, vx, vy, color, r = 5, special = null, destructible = false, dmg = null) {
-      const stageId = saveData.selectedStage || 1;
-      const diff = stageId === 6 ? 1.25 : (saveData.difficultyMult || 1.0);
-      const fallbackDmg = Math.max(1, Math.round((stageId === 6 ? Math.min(7, 1 + Math.floor(currentWave / 16)) : stageId) * (diff > 1.5 ? 1.5 : 1.0)));
-      enemyBullets.push({
-        x, y, vx, vy, color, r, special, destructible,
-        dmg: dmg !== null ? dmg : fallbackDmg,
-        alive: true
-      });
+    function spawnEnemyBullet(x, y, vx, vy, color, r = 5, special = null, destructible = false) {
+      enemyBullets.push({ x, y, vx, vy, color, r, special, destructible, alive: true });
     }
 
     function spawnDebrisFromEnemy(x, y, stageId, subType) {
@@ -3619,25 +3271,19 @@
         maxLife: 16
       });
     }
-    function triggerDustExplosion(x, y, isEnemyTriggered, customDmg = null) {
+
+    function triggerDustExplosion(x, y, isEnemyTriggered) {
       sound.playExplode(true);
       createExplosion(x, y, 78, '#f97316', true);
       triggerScreenShake(9);
       if (!isEnemyTriggered) {
         saveData.dustExplosions = (saveData.dustExplosions || 0) + 1;
-        // Player-triggered dust explosions also wipe nearby enemy bullets!
-        enemyBullets.forEach(eb => {
-          if (Math.hypot(eb.x - x, eb.y - y) < 88) {
-            eb.alive = false;
-          }
-        });
       }
-      const dmg = customDmg !== null ? customDmg : (28 * (fortress ? fortress.buffs.damageMult : 1));
       enemies.forEach(en => {
-        if (Math.hypot(en.x - x, en.y - y) < 105) en.takeDamage(dmg);
+        if (Math.hypot(en.x - x, en.y - y) < 105) en.takeDamage(26);
       });
       if (activeBoss && Math.hypot(activeBoss.x - x, activeBoss.y - y) < 125) {
-        activeBoss.takeDamage(dmg * 1.15);
+        activeBoss.takeDamage(32);
       }
       if (isEnemyTriggered && fortress && Math.hypot(fortress.x - x, fortress.y - y) < 82) {
         fortress.takeDamage(x, y, 2);
@@ -3662,7 +3308,6 @@
     let screenShake = 0;
 
     let skillCooldowns = {
-      coreult: 0,
       magnet: 0,
       overclock: 0,
       purge: 0
@@ -3674,8 +3319,7 @@
 
     function addExpAndScore(exp, pts) {
       score += pts;
-      const stageMult = saveData.selectedStage === 6 ? (1 + currentWave * 0.08) : Math.pow(1.55, (saveData.selectedStage || 1) - 1);
-      const scrapGain = Math.ceil((exp / 4.5) * stageMult * (1 + (saveData.upgrades.scrapBonus - 1) * 0.30));
+      const scrapGain = Math.ceil((exp / 5) * (1 + (saveData.upgrades.scrapBonus - 1) * 0.25));
       stageScrapEarned += scrapGain;
       saveData.scrap += scrapGain;
 
@@ -3706,13 +3350,87 @@
       writeSave();
 
       const st = STAGES.find(s => s.id === stageId) || STAGES[0];
+      document.getElementById('hud-stage-name').textContent = st.name;
+      document.getElementById('hud-stage-sub').textContent = st.jpName;
+      document.getElementById('hud-boss-name').textContent = `BOSS: ${st.bossName}`;
+      document.getElementById('hud-boss-wrap').classList.add('hidden');
+      document.getElementById('hud-boss-berserk').classList.add('hidden');
+      bannerWarning.classList.add('hidden');
+
+      fortress = new Fortress(width / 2, height * 0.76);
+      enemies = [];
+      activeBoss = null;
+      playerBullets = [];
+      enemyBullets = [];
+      debrisList = [];
+      gasClouds = [];
+      particles = [];
+      const startW = (stageId === 6 && saveData.abyssStartWave > 1) ? saveData.abyssStartWave : 1;
+      stageTimer = stageId === 6 ? (startW - 1) * 210 : 0;
+      currentWave = startW;
+      score = 0;
+      stageScrapEarned = 0;
+      currentExp = 0;
+      expToNext = 120;
+      buildLevel = 1;
+      currentCameraScale = 1.0;
+      skillCooldowns = { magnet: 0, overclock: 0, purge: 0 };
+
+      screenTitle.classList.add('hidden');
+      screenGarage.classList.add('hidden');
+      screenResult.classList.add('hidden');
+      hudOverlay.classList.remove('opacity-0');
+
+      setRenaMessage(`${st.jpName}へ出撃！前衛の装甲でコアを守りつつ戦ってください！`);
+      gameState = 'PLAYING';
+    }
+
+    function spawnStageEnemySquad(stageId) {
+      const x = 36 + Math.random() * (width - 72);
+      const pCount = fortress ? fortress.parts.size : 1;
+      const effStage = stageId === 6 ? ((currentWave - 1) % 5) + 1 : stageId;
+
+      if (effStage === 1) {
+        if (Math.random() < 0.35) {
+          enemies.push(new Enemy(x, -24, 'sentinel', stageId, pCount));
+          enemies.push(new Enemy(Math.max(30, x - 38), -48, 'mannequin', stageId, pCount));
+          enemies.push(new Enemy(Math.min(width - 30, x + 38), -48, 'mannequin', stageId, pCount));
+        } else {
+          enemies.push(new Enemy(x, -24, 'mannequin', stageId, pCount));
+        }
+      } else if (effStage === 2) {
+        const sub = Math.random() < 0.58 ? 'rabbit' : 'regolith';
+        enemies.push(new Enemy(x, -26, sub, stageId, pCount));
+        if (sub === 'rabbit' && Math.random() < 0.5) {
+          enemies.push(new Enemy(width - x, -42, 'rabbit', stageId, pCount));
+        }
+      } else if (effStage === 3) {
+        const r = Math.random();
+        if (r < 0.28) {
+          for (let i = 0; i < 4; i++) {
+            enemies.push(new Enemy(x + i * 14 - 20, -24 - i * 24, 'scarab', stageId, pCount));
+          }
+        } else {
+          const sub = r < 0.65 ? 'scarab' : 'scorpion';
+          enemies.push(new Enemy(x, -26, sub, stageId, pCount));
+        }
+      } else if (effStage === 4) {
+        const sub = Math.random() < 0.55 ? 'sandman' : 'sparkfly';
+        enemies.push(new Enemy(x, -26, sub, stageId, pCount));
+      } else {
+        const sub = Math.random() < 0.5 ? 'seraph' : (Math.random() < 0.5 ? 'scorpion' : 'regolith');
+        enemies.push(new Enemy(x, -26, sub, stageId, pCount));
+      }
+    }
+
+    function triggerBossAppearance(stageId) {
+      const actualVisualStage = stageId === 6 ? ((Math.floor(currentWave / 4) - 1) % 5) + 1 : stageId;
+      const st = STAGES.find(s => s.id === actualVisualStage) || STAGES[0];
       sound.playSiren();
       bannerBossTitle.textContent = st.bossName;
       bannerWarning.classList.remove('hidden');
       bannerWarning.classList.add('flex');
       document.getElementById('hud-boss-name').textContent = `BOSS: ${st.bossName}`;
-      document.getElementById('hud-boss-bar').style.width = '100%';
-      document.getElementById('hud-boss-percent').textContent = '100%';
       document.getElementById('hud-boss-berserk').classList.add('hidden');
       setRenaMessage(`高エネルギー反応！惑星ボス『${st.bossName}』が来ます！外装を盾にして凌いでください！`);
 
@@ -3729,57 +3447,26 @@
     function handleStageClear() {
       gameState = 'RESULT';
       const stId = saveData.selectedStage;
-      const isHardcore = (saveData.difficultyMult || 1.0) > 1.5;
-      if (!saveData.stageClears) saveData.stageClears = {};
-
       if (stId === 5) saveData.sunCleared = true;
-      const unlockedNewPlanet = stId === saveData.unlockedStage && saveData.unlockedStage < 6;
-      if (unlockedNewPlanet) {
+      const unlockedNew = stId === saveData.unlockedStage && saveData.unlockedStage < 6;
+      if (unlockedNew) {
         saveData.unlockedStage++;
       }
-
-      const st = STAGES.find(s => s.id === stId) || STAGES[0];
-      let firstClearRewards = [];
-
-      // Always record STANDARD clear on any clear, plus HARDCORE clear if played on HARDCORE
-      if (!saveData.stageClears[`${stId}_std`]) {
-        saveData.stageClears[`${stId}_std`] = true;
-        const firstStdBonus = [0, 300, 600, 1100, 1800, 3000][stId] || 500;
-        stageScrapEarned += firstStdBonus;
-        saveData.scrap += firstStdBonus;
-        firstClearRewards.push(`✨ STANDARD初回特典: ${st.stdRewardText}`);
-      }
-
-      if (isHardcore && !saveData.stageClears[`${stId}_hard`]) {
-        saveData.stageClears[`${stId}_hard`] = true;
-        const firstHardBonus = [0, 800, 1500, 2500, 4000, 7000][stId] || 1000;
-        stageScrapEarned += firstHardBonus;
-        saveData.scrap += firstHardBonus;
-        if (st.hardRewardId) {
-          if (!saveData.unlockedUltimates) saveData.unlockedUltimates = ['buster_beam'];
-          if (!saveData.unlockedUltimates.includes(st.hardRewardId)) {
-            saveData.unlockedUltimates.push(st.hardRewardId);
-          }
-          saveData.equippedUltimate = st.hardRewardId;
-        }
-        firstClearRewards.push(`🔥 HARDCORE初回特典: ${st.hardRewardText}`);
-      }
-
-      const clearBonus = Math.round(320 * Math.pow(1.8, stId - 1) * (isHardcore ? 1.8 : 1.0));
+      const clearBonus = 260 * stId;
       stageScrapEarned += clearBonus;
       saveData.scrap += clearBonus;
       writeSave();
 
-      showResultScreen(true, unlockedNewPlanet, firstClearRewards);
+      showResultScreen(true, unlockedNew);
     }
 
     function handleGameOver() {
       gameState = 'RESULT';
       writeSave();
-      showResultScreen(false, false, []);
+      showResultScreen(false, false);
     }
 
-    function showResultScreen(isVictory, unlockedNew, firstClearRewards = []) {
+    function showResultScreen(isVictory, unlockedNew) {
       const st = STAGES.find(s => s.id === saveData.selectedStage) || STAGES[0];
       document.getElementById('result-title').textContent = isVictory ? 'PLANET RECLAIMED!' : 'CORE DESTROYED';
       document.getElementById('result-title').className = isVictory
@@ -3787,21 +3474,16 @@
         : 'text-2xl font-sci font-black text-rose-500 mb-1 tracking-wider glow-magenta';
       document.getElementById('result-subtitle').textContent = isVictory
         ? `${st.jpName}の奪還に成功！大量のスクラップを獲得しました！`
-        : saveData.selectedStage === 6
-        ? `ABYSS WAVE ${currentWave} まで到達！獲得スクラップを持ち帰ります！`
-        : 'コア大破。3.TECHタブでコア永続強化・必殺技強化を進めて再挑戦しましょう！';
+        : 'コア大破。回収済みのスクラップとパーツ熟練度をガレージへ持ち帰ります。';
 
-      document.getElementById('result-stage').textContent = `${st.code} ${saveData.selectedStage === 6 ? `(WAVE ${currentWave})` : ((saveData.difficultyMult || 1) > 1.5 ? '[HARDCORE]' : '[STANDARD]')}`;
+      document.getElementById('result-stage').textContent = st.code;
       document.getElementById('result-score').textContent = String(score).padStart(5, '0');
       document.getElementById('result-parts').textContent = `${fortress ? fortress.maxPartsAchieved : 1} PARTS`;
       document.getElementById('result-scraps').textContent = `+${stageScrapEarned}`;
 
       const unlockBox = document.getElementById('result-unlock-box');
-      if (unlockedNew || firstClearRewards.length > 0) {
-        const lines = [];
-        if (unlockedNew) lines.push(`🎁 新宙域＆新パーツ（${st.unlockDrop}）解禁！`);
-        lines.push(...firstClearRewards);
-        unlockBox.innerHTML = lines.join('<br>');
+      if (unlockedNew) {
+        unlockBox.textContent = `🎁 新宙域＆新パーツ（${st.unlockDrop}）がガレージで解禁されました！`;
         unlockBox.classList.remove('hidden');
       } else {
         unlockBox.classList.add('hidden');
@@ -3883,39 +3565,39 @@
         maxLv: 12
       },
       {
-        key: 'partHp',
-        name: 'ドッキング装甲剛性 (Part Armor)',
-        desc: '後半ステージの高威力弾に耐えるため、装着した装甲・近接パーツのHPを【+2ずつ】大幅強化します',
-        baseCost: 125,
-        maxLv: 20
-      },
-      {
-        key: 'firepower',
-        name: '機関出力チューン (Weapon Output)',
-        desc: '全ウェポンとコア必殺技の攻撃ダメージを永続的に【+28%ずつ】大幅強化します',
-        baseCost: 115,
-        maxLv: 25
-      },
-      {
-        key: 'coreShield',
-        name: 'コア予備シールド (Core Protect)',
-        desc: 'コア直撃や全パーツ喪失時に即死を防ぐ緊急コアシールドを【最大10枚まで】増設します',
-        baseCost: 150,
-        maxLv: 10
-      },
-      {
         key: 'magnet',
         name: '磁力センサー拡張 (Magnet Range)',
         desc: '敵の残骸や武器パーツを自動で吸い寄せる磁力範囲を拡大します',
         baseCost: 85,
-        maxLv: 15
+        maxLv: 8
+      },
+      {
+        key: 'coreShield',
+        name: 'コア予備シールド (Core Protect)',
+        desc: 'パーツが全て剥がされた際、コアを即死から守る緊急シールドを増やします',
+        baseCost: 150,
+        maxLv: 5
+      },
+      {
+        key: 'partHp',
+        name: 'ドッキング装甲剛性 (Part Armor)',
+        desc: '合体したすべての武器・装甲パーツの耐久値（HP）を底上げします',
+        baseCost: 130,
+        maxLv: 6
+      },
+      {
+        key: 'firepower',
+        name: '機関出力チューン (Weapon Output)',
+        desc: '全ウェポンパーツの攻撃ダメージを永続的に+22%ずつ強化します',
+        baseCost: 115,
+        maxLv: 8
       },
       {
         key: 'scrapBonus',
         name: 'スクラップ回収炉 (Harvester)',
-        desc: '敵撃破時に獲得できるスクラップ資源量を【+30%ずつ】増加させ、高Lv強化を支えます',
+        desc: '敵撃破時に獲得できるスクラップ資源量を+25%ずつ増加させます',
         baseCost: 95,
-        maxLv: 20
+        maxLv: 8
       }
     ];
 
@@ -3961,27 +3643,13 @@
     function renderGarage() {
       document.getElementById('garage-scrap-count').textContent = saveData.scrap;
 
-      const isAbyss = saveData.selectedStage === 6;
-      const diffGroup = document.getElementById('difficulty-group');
-      const abyssBadge = document.getElementById('abyss-fixed-diff-badge');
-      if (isAbyss) {
-        diffGroup.classList.add('hidden');
-        abyssBadge.classList.remove('hidden');
-      } else {
-        diffGroup.classList.remove('hidden');
-        abyssBadge.classList.add('hidden');
-      }
-
-      // Highlight selected difficulty (STANDARD vs HARDCORE)
+      // Highlight selected difficulty
       document.querySelectorAll('.diff-btn').forEach(btn => {
         const val = parseFloat(btn.getAttribute('data-diff'));
-        const isCurrent = Math.abs(val - (saveData.difficultyMult || 1.0)) < 0.1;
-        if (isCurrent) {
-          btn.className = val > 1.5
-            ? 'diff-btn px-2.5 py-1 rounded text-[9px] font-sci font-bold bg-rose-600 text-white border border-rose-300 shadow-[0_0_10px_rgba(244,63,94,0.4)]'
-            : 'diff-btn px-2.5 py-1 rounded text-[9px] font-sci font-bold bg-cyan-600 text-white border border-cyan-300 shadow-[0_0_10px_rgba(6,182,212,0.4)]';
+        if (Math.abs(val - (saveData.difficultyMult || 1.0)) < 0.05) {
+          btn.className = 'diff-btn px-2 py-1 rounded text-[9px] font-sci font-bold bg-rose-600 text-white border border-rose-400';
         } else {
-          btn.className = 'diff-btn px-2.5 py-1 rounded text-[9px] font-sci font-bold bg-slate-950 text-slate-400 border border-slate-700';
+          btn.className = 'diff-btn px-2 py-1 rounded text-[9px] font-sci font-bold bg-slate-950 text-slate-400 border border-slate-700';
         }
       });
 
@@ -3989,14 +3657,9 @@
       const stageGrid = document.getElementById('stage-select-grid');
       stageGrid.innerHTML = '';
       STAGES.forEach(st => {
+        // Stage 6 (ABYSS Endless) is always unlocked for replayability!
         const unlocked = st.id <= saveData.unlockedStage || st.id === 6;
         const selected = st.id === saveData.selectedStage;
-        const stdDone = saveData.stageClears && saveData.stageClears[`${st.id}_std`];
-        const hardDone = saveData.stageClears && saveData.stageClears[`${st.id}_hard`];
-        const badgeMarks = st.id === 6
-          ? `W${saveData.endlessBestWave || 0}`
-          : `${stdDone ? '★' : '☆'}${hardDone ? '👑' : ''}`;
-
         const btn = document.createElement('button');
         btn.className = `py-2 px-1 rounded-lg font-sci text-[10px] font-bold border transition flex flex-col items-center ${
           selected
@@ -4007,7 +3670,7 @@
         }`;
         btn.innerHTML = `
           <span>${st.id === 6 ? 'EX' : st.id}.${st.code}</span>
-          <span class="text-[8px] mt-0.5 ${hardDone ? 'text-amber-300' : 'text-cyan-300'}">${unlocked ? badgeMarks : 'LOCKED'}</span>
+          <span class="text-[8px] mt-0.5">${unlocked ? (st.id === 6 ? `BEST W${saveData.endlessBestWave || 0}` : 'ONLINE') : 'LOCKED'}</span>
         `;
         btn.addEventListener('click', () => {
           if (unlocked) {
@@ -4020,27 +3683,10 @@
       });
 
       const curStage = STAGES.find(s => s.id === saveData.selectedStage) || STAGES[0];
-      const stdCleared = saveData.stageClears && saveData.stageClears[`${curStage.id}_std`];
-      const hardCleared = saveData.stageClears && saveData.stageClears[`${curStage.id}_hard`];
       document.getElementById('selected-stage-desc').innerHTML = `
-        <div class="flex flex-col gap-1">
-          <div class="flex items-center justify-between flex-wrap gap-1">
-            <span class="font-bold text-cyan-300 text-xs">${curStage.jpName}</span>
-            <span class="text-[9px] font-sci px-2 py-0.5 rounded bg-rose-950/90 text-rose-300 border border-rose-500/40 font-bold">${curStage.recTech}</span>
-          </div>
-          <div class="text-[10px] text-slate-300">${curStage.desc}</div>
-          ${curStage.id <= 5 ? `
-            <div class="mt-1 pt-1.5 border-t border-slate-800/90 grid grid-cols-1 sm:grid-cols-2 gap-1 text-[9px]">
-              <div class="p-1.5 rounded border ${stdCleared ? 'bg-emerald-950/40 border-emerald-500/40 text-emerald-200' : 'bg-slate-900/80 border-slate-700 text-slate-300'}">
-                <div class="font-sci font-bold">${stdCleared ? '✅ STANDARD 達成済' : '🎯 STANDARD クリア特典'}</div>
-                <div class="mt-0.5">${curStage.stdRewardText}</div>
-              </div>
-              <div class="p-1.5 rounded border ${hardCleared ? 'bg-fuchsia-950/40 border-fuchsia-400/50 text-fuchsia-200' : 'bg-slate-900/80 border-rose-500/40 text-rose-200'}">
-                <div class="font-sci font-bold">${hardCleared ? '👑 HARDCORE 達成済' : '🔥 HARDCORE クリア特典'}</div>
-                <div class="mt-0.5">${curStage.hardRewardText}</div>
-              </div>
-            </div>
-          ` : ''}
+        <div>
+          <div class="font-bold text-cyan-300 text-xs">${curStage.jpName}</div>
+          <div class="text-[10px] text-slate-400 mt-0.5">${curStage.desc}</div>
         </div>
       `;
 
@@ -4080,21 +3726,6 @@
       }
       document.getElementById('garage-slot-usage').textContent = `SLOTS: ${saveData.loadout.length} / ${maxSlots}`;
 
-      // Check which loadout slots are structurally connected to K-CORE (0,0)
-      const connectedLoadoutKeys = new Set(['0,0']);
-      const bfsQueue = [[0, 0]];
-      const loadoutKeySet = new Set(saveData.loadout.map(i => `${i.gx},${i.gy}`));
-      while (bfsQueue.length > 0) {
-        const [cx, cy] = bfsQueue.shift();
-        [[cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]].forEach(([nx, ny]) => {
-          const k = `${nx},${ny}`;
-          if (loadoutKeySet.has(k) && !connectedLoadoutKeys.has(k)) {
-            connectedLoadoutKeys.add(k);
-            bfsQueue.push([nx, ny]);
-          }
-        });
-      }
-
       const lGrid = document.getElementById('loadout-grid');
       lGrid.innerHTML = '';
       for (let gy = -2; gy <= 2; gy++) {
@@ -4106,7 +3737,6 @@
           } else {
             const existing = saveData.loadout.find(i => i.gx === gx && i.gy === gy);
             const spec = existing ? WEAPON_CATALOG[existing.type] : null;
-            const isConnected = existing ? connectedLoadoutKeys.has(`${gx},${gy}`) : true;
             // Zone color hints: Front (gy < 0) = Sky, Wing (gy === 0) = Emerald, Rear (gy > 0) = Purple
             const zoneBorder = gy < 0
               ? 'border-sky-500/35 bg-sky-950/20'
@@ -4116,14 +3746,10 @@
             const zoneLabel = gy < 0 ? '前衛' : gy === 0 ? '両翼' : '後衛';
 
             cell.className = `w-10 h-10 sm:w-11 sm:h-11 rounded-lg border flex flex-col items-center justify-center text-[8px] font-bold active:scale-95 transition ${
-              existing
-                ? (isConnected
-                    ? 'bg-slate-900 border-amber-400 text-amber-200 shadow-[0_0_8px_rgba(251,191,36,0.25)]'
-                    : 'bg-rose-950/90 border-rose-400 text-rose-200 animate-pulse')
-                : `${zoneBorder} text-slate-500`
+              existing ? 'bg-slate-900 border-amber-400 text-amber-200 shadow-[0_0_8px_rgba(251,191,36,0.25)]' : `${zoneBorder} text-slate-500`
             }`;
             cell.innerHTML = existing
-              ? `<span class="truncate max-w-[36px] leading-tight">${spec.short.slice(0, 4)}</span><span class="text-[6px] ${isConnected ? 'text-slate-400' : 'text-rose-300'}">${isConnected ? '連結済' : '⚠️孤立'}</span>`
+              ? `<span class="truncate max-w-[36px] leading-tight">${spec.short.slice(0, 4)}</span><span class="text-[6px] text-slate-400">外す</span>`
               : `<span>＋</span><span class="text-[6px] opacity-75">${zoneLabel}</span>`;
 
             cell.addEventListener('click', () => {
@@ -4172,89 +3798,13 @@
         <span class="text-cyan-300 font-bold">${curWeaponSpec.name}:</span> ${curWeaponSpec.desc}
       `;
 
-      // 3A. Render K-CORE ULTIMATE ARTS List (Equip & Upgrade Lv.1 ~ Lv.10)
-      const ultList = document.getElementById('core-ult-list');
-      ultList.innerHTML = '';
-      Object.values(CORE_ULTIMATES).forEach(u => {
-        const isUnlocked = (saveData.unlockedUltimates || ['buster_beam']).includes(u.id);
-        const isEquipped = (saveData.equippedUltimate || 'buster_beam') === u.id;
-        const lv = (saveData.ultimateLevels && saveData.ultimateLevels[u.id]) || 1;
-        const isMax = lv >= u.maxLv;
-        const cost = Math.floor(u.baseCost * Math.pow(1.42, lv - 1));
-        const canAfford = isUnlocked && !isMax && saveData.scrap >= cost;
-
-        const card = document.createElement('div');
-        card.className = `p-2 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-2 ${
-          isEquipped
-            ? 'bg-fuchsia-950/60 border-fuchsia-400 shadow-[0_0_12px_rgba(232,121,249,0.25)]'
-            : isUnlocked
-            ? 'bg-slate-950/90 border-slate-800'
-            : 'bg-slate-950/40 border-slate-900 opacity-75'
-        }`;
-        card.innerHTML = `
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-1.5 flex-wrap">
-              <span class="text-xs font-bold ${isUnlocked ? 'text-fuchsia-200' : 'text-slate-500'}">${u.short} // ${u.name}</span>
-              ${isUnlocked
-                ? `<span class="text-[9px] font-sci px-1.5 py-0.5 rounded bg-fuchsia-950 text-fuchsia-300 border border-fuchsia-500/40">Lv.${lv}/${u.maxLv}</span>`
-                : `<span class="text-[9px] font-sci px-1.5 py-0.5 rounded bg-rose-950 text-rose-300 border border-rose-500/40">🔒 ${u.unlockCond}</span>`
-              }
-            </div>
-            <p class="text-[10px] text-slate-300 mt-0.5 leading-snug">${u.getDesc(lv)}</p>
-          </div>
-          <div class="flex items-center gap-1.5 flex-shrink-0">
-            <button data-act="equip" class="px-2.5 py-1.5 rounded-lg font-sci text-[9px] font-bold active:scale-95 transition ${
-              !isUnlocked
-                ? 'bg-slate-900 text-slate-600 border border-slate-800'
-                : isEquipped
-                ? 'bg-fuchsia-400 text-slate-950'
-                : 'bg-slate-800 text-fuchsia-200 border border-fuchsia-500/40'
-            }">
-              ${!isUnlocked ? '未解禁' : isEquipped ? '装備中' : '装備する'}
-            </button>
-            <button data-act="upgrade" class="px-2.5 py-1.5 rounded-lg font-sci text-[9px] font-bold active:scale-95 transition ${
-              !isUnlocked
-                ? 'hidden'
-                : isMax
-                ? 'bg-slate-800 text-slate-500'
-                : canAfford
-                ? 'bg-amber-400 text-slate-950 shadow'
-                : 'bg-slate-900 border border-slate-700 text-slate-500'
-            }">
-              ${isMax ? 'MAX' : `強化(${cost})`}
-            </button>
-          </div>
-        `;
-        const equipBtn = card.querySelector('button[data-act="equip"]');
-        const upgBtn = card.querySelector('button[data-act="upgrade"]');
-        equipBtn.addEventListener('click', () => {
-          if (isUnlocked) {
-            saveData.equippedUltimate = u.id;
-            sound.playDock();
-            writeSave();
-            renderGarage();
-          }
-        });
-        upgBtn.addEventListener('click', () => {
-          if (isUnlocked && !isMax && saveData.scrap >= cost) {
-            saveData.scrap -= cost;
-            if (!saveData.ultimateLevels) saveData.ultimateLevels = {};
-            saveData.ultimateLevels[u.id] = lv + 1;
-            sound.playPowerup();
-            writeSave();
-            renderGarage();
-          }
-        });
-        ultList.appendChild(card);
-      });
-
-      // 3B. Render Permanent Core Tech Upgrades (All 6 items with higher caps)
+      // 3. Render Permanent Core Tech Upgrades (All 6 items clearly visible)
       const upList = document.getElementById('upgrade-list');
       upList.innerHTML = '';
       UPGRADE_DEFS.forEach(u => {
         const lv = saveData.upgrades[u.key] || 1;
         const isMax = lv >= u.maxLv;
-        const cost = Math.floor(u.baseCost * Math.pow(1.38, lv - 1));
+        const cost = Math.floor(u.baseCost * Math.pow(1.45, lv - 1));
         const canAfford = !isMax && saveData.scrap >= cost;
 
         const row = document.createElement('div');
@@ -4297,13 +3847,13 @@
       Object.entries(WEAPON_CATALOG).forEach(([typeKey, spec]) => {
         const count = (saveData.partStats && saveData.partStats[typeKey]) || 0;
         const mLv = getPartMasteryLevel(typeKey);
-        const stars = `★Lv.${mLv}/10`;
+        const stars = '★'.repeat(mLv) + '☆'.repeat(5 - mLv);
         const card = document.createElement('div');
         card.className = 'p-2 rounded-lg bg-slate-950 border border-slate-800 flex flex-col justify-between';
         card.innerHTML = `
           <div class="flex items-center justify-between">
             <span class="text-[10px] font-bold text-slate-200 truncate">${spec.short}</span>
-            <span class="text-[9px] text-amber-400 font-sci font-bold">${stars}</span>
+            <span class="text-[9px] text-amber-400 font-sci">${stars}</span>
           </div>
           <div class="flex items-center justify-between mt-1 text-[9px] text-slate-400">
             <span>回収数: ${count}</span>
@@ -4409,45 +3959,6 @@
       e.currentTarget.textContent = sound.enabled ? '🔊 SOUND: ON' : '🔇 SOUND: OFF';
     });
 
-    // Active Skill 0: K-CORE ULTIMATE (コア必殺技)
-    document.getElementById('btn-skill-coreult').addEventListener('click', () => {
-      if (gameState !== 'PLAYING' || skillCooldowns.coreult > 0 || !fortress) return;
-      const uType = saveData.equippedUltimate || 'buster_beam';
-      const uSpec = CORE_ULTIMATES[uType] || CORE_ULTIMATES.buster_beam;
-      const uLv = (saveData.ultimateLevels && saveData.ultimateLevels[uType]) || 1;
-
-      skillCooldowns.coreult = 900; // 15s cooldown
-      fortress.coreUltType = uType;
-
-      if (uType === 'buster_beam') {
-        // Default 5.0s (300 frames) -> up to 10.0s (600 frames) at Lv.10!
-        fortress.coreUltTimer = Math.round((5.0 + (uLv - 1) * 0.55) * 60);
-      } else if (uType === 'homing_swarm') {
-        const totalMissiles = 16 + (uLv - 1) * 4;
-        fortress.coreUltTimer = Math.ceil(totalMissiles / 2) * 5;
-      } else if (uType === 'prism_matrix') {
-        fortress.coreUltTimer = Math.round((5.0 + (uLv - 1) * 0.55) * 60);
-      } else if (uType === 'meteor_napalm') {
-        const meteors = 10 + (uLv - 1) * 3;
-        fortress.coreUltTimer = meteors * 8;
-      } else if (uType === 'tempest_detonation') {
-        const blasts = 5 + (uLv - 1) * 1;
-        fortress.coreUltTimer = blasts * 12;
-      } else if (uType === 'genesis_nova') {
-        fortress.coreUltTimer = Math.round((6.0 + (uLv - 1) * 0.6) * 60);
-        fortress.mochiBarrierTimer = fortress.coreUltTimer;
-        for (const part of fortress.parts.values()) {
-          part.hp = part.maxHp;
-        }
-      }
-
-      sound.playPowerup();
-      sound.playLaser();
-      triggerScreenShake(10);
-      createExplosion(fortress.x, fortress.y, 120, '#e879f9', true);
-      setRenaMessage(`コア必殺技『${uSpec.name} (Lv.${uLv})』発動！！敵陣を薙ぎ払います！`);
-    });
-
     // Active Skill 1: MAGNET BURST
     document.getElementById('btn-skill-magnet').addEventListener('click', () => {
       if (gameState !== 'PLAYING' || skillCooldowns.magnet > 0 || !fortress) return;
@@ -4505,10 +4016,7 @@
 
       if (gameState !== 'PLAYING' || !fortress) return;
 
-      // Only advance stage/wave timer when no Boss is active so Boss fights never skip waves!
-      if (!activeBoss) {
-        stageTimer++;
-      }
+      stageTimer++;
 
       // Keyboard fallback movement
       const kbSpeed = 4.6;
@@ -4523,46 +4031,35 @@
       const targetScale = Math.max(0.56, 1.0 - Math.max(0, fortress.parts.size - 4) * 0.015);
       currentCameraScale += (targetScale - currentCameraScale) * 0.05;
 
-      // Update Active Skill Cooldowns (including K-CORE ULTIMATE)
-      const cdSpecs = [
-        { key: 'coreult', max: 900 },
-        { key: 'magnet', max: 450 },
-        { key: 'overclock', max: 600 },
-        { key: 'purge', max: 660 }
-      ];
-      cdSpecs.forEach(({ key, max }) => {
-        if (skillCooldowns[key] > 0) skillCooldowns[key]--;
-        const bar = document.getElementById(`cd-${key}`);
-        if (bar) bar.style.transform = `scaleY(${skillCooldowns[key] / max})`;
+      // Update Active Skill Cooldowns
+      ['magnet', 'overclock', 'purge'].forEach((k, idx) => {
+        const maxCd = idx === 0 ? 450 : idx === 1 ? 600 : 660;
+        if (skillCooldowns[k] > 0) skillCooldowns[k]--;
+        const bar = document.getElementById(`cd-${k}`);
+        if (bar) bar.style.transform = `scaleY(${skillCooldowns[k] / maxCd})`;
       });
 
       // Wave Progression & Balanced Enemy Spawning
       if (!activeBoss) {
         if (stageId === 6) {
-          // Endless Abyss Mode: 3.0-second waves (180 frames), Boss every 10 Waves (W10, W20, ... W100)
-          const prevBest = saveData.endlessBestWave || 0;
-          currentWave = Math.floor(Math.max(0, stageTimer - 1) / 180) + 1;
-          if (currentWave > prevBest) {
+          // Endless Abyss Mode: Brisk 3.5-second waves (210 frames) so reaching Wave 50 & Wave 100 is an exciting challenge!
+          currentWave = Math.floor(stageTimer / 210) + 1;
+          if (currentWave > (saveData.endlessBestWave || 0)) {
             saveData.endlessBestWave = currentWave;
-            if (prevBest < 50 && currentWave >= 50) {
+            if (currentWave === 50) {
               sound.playPowerup();
-              writeSave();
               setRenaMessage('🎉 偉業達成！Wave 50到達により神話兵器『深淵重力砲 アビス・シンギュラリティ』が解禁されました！');
-            } else if (prevBest < 100 && currentWave >= 100) {
+            } else if (currentWave === 100) {
               sound.playPowerup();
-              writeSave();
               setRenaMessage('👑 神話達成！Wave 100到達により究極兵器『創世終焉砲 オメガ・ジェネシス』が解禁されました！');
-            } else if (currentWave % 10 === 0) {
-              writeSave();
             }
           }
           document.getElementById('hud-wave-progress').textContent = `W${currentWave}/∞`;
-          const spawnInterval = Math.max(26, 56 - Math.min(30, Math.floor(currentWave * 0.35)));
+          const spawnInterval = Math.max(24, 58 - Math.min(34, Math.floor(currentWave * 0.6)));
           if (stageTimer % spawnInterval === 0) {
             spawnStageEnemySquad(stageId);
           }
-          // Boss appears at the end of every 10th Wave (W10, W20, W30 ... W100) while currentWave is still exact multiple of 10!
-          if (stageTimer > 0 && stageTimer % 1800 === 0) {
+          if (stageTimer > 0 && stageTimer % 1050 === 0) {
             triggerBossAppearance(6);
           }
         } else {
@@ -4649,9 +4146,7 @@
         // Hit Regular Enemies
         enemies.forEach(en => {
           if (!en.alive || !pb.alive) return;
-          if (pb.hitTargets && pb.hitTargets.has(en)) return;
           if (Math.hypot(pb.x - en.x, pb.y - en.y) < en.radius + 8) {
-            if (pb.hitTargets) pb.hitTargets.add(en);
             en.takeDamage(pb.dmg);
             createSparks(pb.x, pb.y, 4, '#38bdf8');
             if (pb.bType !== 'laser' && pb.bType !== 'pestle' && pb.bType !== 'abyss' && pb.bType !== 'omega_beam') pb.alive = false;
@@ -4660,13 +4155,10 @@
 
         // Hit Planetary Boss
         if (activeBoss && activeBoss.alive && pb.alive) {
-          if (!pb.hitTargets || !pb.hitTargets.has(activeBoss)) {
-            if (Math.hypot(pb.x - activeBoss.x, pb.y - activeBoss.y) < activeBoss.radius + 10) {
-              if (pb.hitTargets) pb.hitTargets.add(activeBoss);
-              activeBoss.takeDamage(pb.dmg);
-              createSparks(pb.x, pb.y, 4, '#fbbf24');
-              if (pb.bType !== 'laser' && pb.bType !== 'omega_beam') pb.alive = false;
-            }
+          if (Math.hypot(pb.x - activeBoss.x, pb.y - activeBoss.y) < activeBoss.radius + 10) {
+            activeBoss.takeDamage(pb.dmg);
+            createSparks(pb.x, pb.y, 4, '#fbbf24');
+            if (pb.bType !== 'laser' && pb.bType !== 'omega_beam') pb.alive = false;
           }
         }
       });
@@ -4773,10 +4265,8 @@
               spawnPlayerBullet(px, py, -eb.vx * 1.5, -Math.abs(eb.vy) * 1.6, 'laser', 3.0, true);
               sound.playLaser();
             } else {
-              // Enemy bullets deal stage-scaled damage (1~5+ based on Stage & Hardcore), making Part Armor tech essential!
-              const baseHitDmg = eb.dmg || 1;
-              const finalHitDmg = (eb.special === 'bomb' || eb.special === 'girder') ? baseHitDmg + 1 : baseHitDmg;
-              const coreDied = fortress.takeDamage(eb.x, eb.y, finalHitDmg, part);
+              // Pass exact hit `part` so unprotected weapons shatter in 1 hit and direct K-CORE hits drain Core Shields!
+              const coreDied = fortress.takeDamage(eb.x, eb.y, eb.special === 'bomb' || eb.special === 'girder' ? 2 : 1, part);
               if (coreDied) {
                 handleGameOver();
                 return;
